@@ -92,6 +92,9 @@ class _ThirdRouteState extends State<ThirdRoute> {
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Please enter Full Name';
+                              } else if (!RegExp(r'^[a-z A-Z]+$')
+                                  .hasMatch(value)) {
+                                return "Please enter your real name";
                               }
                               return null;
                             },
